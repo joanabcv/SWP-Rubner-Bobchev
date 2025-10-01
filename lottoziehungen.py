@@ -19,4 +19,4 @@ def statistik(ziehungen=1000):
     return zaehler
 
 print("Lottoziehung:", lottoziehung())
-print("Statistik nach 1000 Ziehungen:", statistik(1000))
+print("Statistik - 1000 Ziehungen:", statistik(1000))
