@@ -1,11 +1,17 @@
 import random
 
 def lottoziehung():
-    zahlen = range(1, 46)
-    ziehung = random.sample(zahlen, 6)
-    ziehung.sort()
-    return ziehung
+    gezogene_zahlen = []
 
+    for i in range(6):
+        zahl = random.randint(1,45)
+        while zahl in gezogene_zahlen:
+            zahl = random.randint(1,45)
+        gezogene_zahlen.append(zahl)
+
+    gezogene_zahlen.sort()
+    return gezogene_zahlen
+    
 def statistik(ziehungen=1000):
     zaehler = {}        #Dictionary
     for zahl in range(1,46):
@@ -19,4 +25,4 @@ def statistik(ziehungen=1000):
     return zaehler
 
 print("Lottoziehung:", lottoziehung())
-print("Statistik - 1000 Ziehungen:", statistik(1000))
+print("Statistik (1000 Ziehungen):", statistik(1000))
