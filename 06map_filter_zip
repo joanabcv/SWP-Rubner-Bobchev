@@ -1,0 +1,24 @@
+def main():
+
+    namen = ["Lisa", "Tom", "Markus", "Sophie", "Kevin"]
+    noten = [1, 3, 4, 2, 5]
+    fehlstunden = [2, 6, 1, 0, 3]
+
+    # zip: Listen zu Tupeln
+    zusammen = list(zip(namen, noten, fehlstunden))
+    # filter: true aus liste
+    gefiltert = list(filter(lambda x: x[1] <= 3 and x[2] < 5, zusammen))
+    # map: Tuple in Dict
+    schueler_dicts = list(map(lambda x: {
+        "name": x[0],
+        "note": x[1],
+        "fehlstunden": x[2]
+    }, gefiltert))
+
+    print("Alle Daten:", zusammen)
+    print("Gefiltert:", gefiltert)
+    print("Als Dict:", schueler_dicts)
+
+
+if __name__ == "__main__":
+    main()
