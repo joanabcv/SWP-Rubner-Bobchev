@@ -1,15 +1,30 @@
 class Mensch:
-    def __init__(self, name, alter):
+    def __init__(self, name):
         self.name = name
-        self.alter = alter
 
     def vorstellen(self):
-        print(f"Hallo, ich heiße {self.name} und bin {self.alter} Jahre alt.")
+        print(self.name)
 
-person1 = Mensch("Joana", 19)
-person2 = Mensch("Annabell", 18)
-person3 = Mensch("Eva", 20)
 
-person1.vorstellen()
-person2.vorstellen()
-person3.vorstellen()
+class Person(Mensch):
+    def __init__(self, name, alter):
+        super().__init__(name)
+        self.alter = alter
+
+    def info(self):
+        print(self.alter)
+
+
+class Schueler(Person):
+    def __init__(self, name, alter, klasse):
+        super().__init__(name, alter)
+        self.klasse = klasse
+
+    def schule(self):
+        print(self.klasse)
+
+
+s = Schueler("Joana ", 19, "5BHWII")
+s.vorstellen()
+s.info()
+s.schule()
