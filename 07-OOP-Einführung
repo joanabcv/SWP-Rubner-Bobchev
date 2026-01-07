@@ -1,0 +1,15 @@
+class Mensch:
+    def __init__(self, name, alter):
+        self.name = name
+        self.alter = alter
+
+    def vorstellen(self):
+        print(f"Hallo, ich heiße {self.name} und bin {self.alter} Jahre alt.")
+
+person1 = Mensch("Joana", 19)
+person2 = Mensch("Annabell", 18)
+person3 = Mensch("Eva", 20)
+
+person1.vorstellen()
+person2.vorstellen()
+person3.vorstellen()
